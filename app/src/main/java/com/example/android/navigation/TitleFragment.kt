@@ -13,6 +13,7 @@ class TitleFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+        (activity as MainActivity).supportActionBar?.title = resources.getString(R.string.app_name)
         val binding: FragmentTitleBinding =
                 DataBindingUtil.inflate(inflater,
                         R.layout.fragment_title,
