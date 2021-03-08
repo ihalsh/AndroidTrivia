@@ -30,11 +30,11 @@ class GameOverFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
+        (activity as MainActivity).supportActionBar?.title = resources.getString(R.string.android_trivia)
         val binding: FragmentGameOverBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_game_over, container, false)
         binding.tryAgainButton.setOnClickListener {view ->
-            view.findNavController().navigate(R.id.action_gameOverFragment_to_gameFragment)
-
+            view.findNavController().navigate(GameOverFragmentDirections.actionGameOverFragmentToGameFragment())
         }
         return binding.root
     }
